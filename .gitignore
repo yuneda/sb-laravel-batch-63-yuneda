@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Compiled files
+/vendor/
+/public/build/
+/public/hot/
+/storage/*.key
+/storage/pail
+
+# Environment & Config
+.env
+.env.*
+
+# Laravel-specific files
+Homestead.json
+Homestead.yaml
+.phpunit.cache
+.phpunit.result.cache
+.phpactor.json
+npm-debug.log
+yarn-error.log
+auth.json
+
+# IDE & Editor-specific files
+.fleet/
+.idea/
+.nova/
+.vscode/
+.zed/
+
+# Other metadata
+/public/storage
