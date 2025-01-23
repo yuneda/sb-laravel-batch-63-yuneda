@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    public function register(){
+        return view('page.register');
+    }
+
     public function showForm()
     {
         return view('form');
@@ -15,6 +19,6 @@ class AuthController extends Controller
     {
         $firstName = $request->input('first_name');
         $lastName = $request->input('last_name');
-        return view('welcome', compact('firstName', 'lastName'));
+        return view('page.welcome', compact('firstName', 'lastName'));
     }
 }
