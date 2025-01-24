@@ -1,0 +1,8 @@
+// jalankan migrate
+php artisan migrate
+// buat migration
+php artisan make:migration create_comments_table
+// reset migrate atau hapus
+php artisan migrate:reset
+// reset dan jaankan migrate
+php artisan migrate:refresh
