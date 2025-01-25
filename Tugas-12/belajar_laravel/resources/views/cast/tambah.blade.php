@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Bio</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" name="bio">
+        <textarea class="form-control" name="bio" id="" cols="30" rows="10"></textarea>
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

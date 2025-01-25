@@ -40,4 +40,32 @@ class CastController extends Controller
         $cast = DB::table('casts')->find($id);
         return view('cast.detail', ['cast'=> $cast]);
     }
+
+    public function edit($id){
+        $cast = DB::table('casts')->find($id);
+        return view('cast.edit', ['cast'=> $cast]);
+    }
+
+    public function update(Request $request, $id){
+        $request->validate([
+            'name' => 'required',
+            'age' => 'required',
+            'bio' => 'required',
+        ]);
+
+        DB::table('casts')
+              ->where('id', $id)
+              ->update([
+                'name' => $request->input('name'),
+                'age' => $request->input('age'),
+                'bio' => $request->input('bio'),
+            ]);
+
+        return redirect('/cast');
+    }
+
+    public function destroy($id){
+        DB::table('casts')->where('id', $id)->delete();
+        return redirect('/cast');
+    }
 }

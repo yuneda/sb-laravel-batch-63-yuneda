@@ -3,7 +3,7 @@
     Halaman Tampil Cast
 @endsection
 @section('content')
-<a href="/cast/create" class="btn btn-sm btn-info my-3">Tambah Cast</a>
+<a href="{{ Route('cast.create') }}" class="btn btn-sm btn-info my-3">Tambah Cast</a>
 <table class="table">
   <thead>
     <tr>
@@ -14,12 +14,17 @@
   </thead>
   <tbody>
     @forelse ($cast as $user)
-        <li>{{ $user->name }}</li>
         <tr>
           <th scope="row">{{ $loop->iteration }}</th>
           <td>{{ $user->name }}</td>
           <td>
-            <a href="/cast/{{ $user->id }}" class="btn btn-info btn-sm">Detail</a>
+            <form action="/cast/{{ $user->id }}" method="POST">
+              <a href="/cast/{{ $user->id }}" class="btn btn-info btn-sm">Detail</a>
+              <a href="/cast/{{ $user->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+              @csrf
+              @method('DELETE')
+              <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+            </form>
           </td>
         </tr>
     @empty

@@ -18,9 +18,14 @@ Route::get('/table', function(){
 });
 
 // CRUD
-Route::get('/cast/create', [CastController::class, 'create']);
+Route::get('/cast/create', [CastController::class, 'create'])->name('cast.create');
 Route::post('/cast', [CastController::class, 'store']);
 
 Route::get('/cast', [CastController::class, 'index']);
-Route::get('/cast/{id}', [CastController::class, 'show']);
+Route::get('/cast/{cast_id}', [CastController::class, 'show']);
+
+Route::get('/cast/{cast_id}/edit', [CastController::class, 'edit']);
+Route::put('/cast/{cast_id}', [CastController::class, 'update']);
+
+Route::delete('/cast/{cast_id}', [CastController::class, 'destroy']);
 
